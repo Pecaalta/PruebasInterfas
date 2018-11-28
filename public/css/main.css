@@ -1,0 +1,271 @@
+html, body {
+  height: 100%;
+}
+html {
+  background: red;
+  background:url("../bg.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1000px;
+}
+/* -- navbar ---------------------- */
+.navbar{
+  background-color: #fff!important;
+  -webkit-box-shadow: 2px 0 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1)!important;
+  box-shadow: 2px 0 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1)!important;
+  color: #4a4a4a!important;
+  display: block!important;
+  z-index: 100!important;
+  position: fixed;
+  width: 100%;
+  height: 3.25rem;
+}
+
+.navbar-burger.burger{
+  position: absolute;
+  right: 0;
+}
+/* -- main ------------------------ */
+main {
+  width: 100%;
+  padding-left: 250px;
+  padding-top: 3.25rem;
+}
+.section {
+  padding: 1.5rem;
+}
+/* -- Tabs ------------------------ */
+.tabs i {
+  margin-right: 5px;
+}
+.tabs li a {
+  padding: 10px 20px;
+}
+
+
+/* -- sidebar --------------------- */
+#sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 52px;
+  background: #262626;
+  padding: 10px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+}
+
+#sidebar li a{
+  display: block;
+  list-style: none;
+  color: #bbb;
+  padding: 8px 0px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#sidebar li a:hover {
+  background: rgba(0,0,0,.2);
+  color: #fff;
+  padding-left: 5px;
+}
+
+#sidebar li a i {
+  display: inline-block;
+  width: 35px;
+  text-align: center;
+  margin: 0;
+  color: #e95420;
+}
+
+#sidebar li ul{
+  background: rgba(0,0,0,.2);
+  border-left: solid 5px rgba(0,0,0,.2);
+
+}
+
+
+/* -- tab -------------------------- */
+.tab-Conteiner {
+  display: none;
+}
+.tab-Conteiner.is-active{
+  display: block;
+  width: 1200px;
+  max-width: 100%;
+  padding: 0px 24px 24px 24px;
+}
+
+.steps-conteiner{
+  display: none;
+}
+.steps-conteiner.is-active{
+  display: block;
+}
+
+.hero {
+  border-radius: 5px;
+  margin-bottom: 24px;
+}
+.hero{
+  background-image: url("bg-producto.png");
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+.hero::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.5)
+}
+.badge::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-5px, -5px);
+  background: #ff3860;
+}
+.hidden {
+  display: none!important;
+}
+.text-center {
+  text-align: center;
+}
+
+/* - Color ------------------------ */
+.file.is-success .file-cta, /* Input file */
+ /* bar progres from*/
+/*.steps-segment:after
+*/{
+    background-color: #e95420!important;
+    color: #fff;
+}
+
+.steps-segment.is-active:after {
+    background-color: #dbdbdb!important;
+}
+
+@media screen and (max-width: 1088px) {
+  /* -- main ---------------------- */
+  main {
+    padding: 0px;
+  }
+
+  /* -- sidebar ------------------- */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar{
+    position: fixed;
+  }
+
+  #sidebar.open {
+    left: 0;
+  }
+
+  .logo{
+    width: 100%;
+    text-align: center;
+  }
+  .logo img {
+      margin: auto;
+  }
+
+}
+/* -- circular ------------------ */
+
+
+#svg-circulo {
+  width: 400px;
+  fill: none;
+  stroke: #edf5ff;
+  stroke-width: 5%;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-200px, -100px);
+}
+#svg-logo{
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-35.485px, -30px);
+  height: 60px;
+}
+#svg-circulo g {
+  transform: rotate(45deg);
+  stroke: url(#g);
+  mask: url(#m);
+}
+
+#svg-circulo #m use {
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-dasharray: var(--d1) var(--d0);
+
+  -webkit-animation:
+  r 1.5s cubic-bezier(0.5, -0.43, 0.5, 1.43) infinite, 
+  s 0.75s ease-in-out infinite alternate;
+  -moz-animation:
+  r 1.5s cubic-bezier(0.5, -0.43, 0.5, 1.43) infinite, 
+  s 0.75s ease-in-out infinite alternate;
+  -ms-animation:
+  r 1.5s cubic-bezier(0.5, -0.43, 0.5, 1.43) infinite, 
+  s 0.75s ease-in-out infinite alternate;
+  -o-animation:
+  r 1.5s cubic-bezier(0.5, -0.43, 0.5, 1.43) infinite, 
+  s 0.75s ease-in-out infinite alternate;
+  animation: 
+  r 1.5s cubic-bezier(0.5, -0.43, 0.5, 1.43) infinite, 
+  s 0.75s ease-in-out infinite alternate;
+
+  animation-duration: 1.5s, 1.5s;
+  animation-name: r, s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+  
+@-webkit-keyframes r {
+  to {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    transform: rotate(720deg);
+  }
+} 
+@keyframes r {
+  to {
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    transform: rotate(720deg);
+  }
+}
+@-webkit-keyframes s {
+  0%, 39% {
+    stroke-dasharray: var(--d0) var(--d1);
+  }
+}
+@keyframes s {
+  0%, 39% {
+    stroke-dasharray: var(--d0) var(--d1);
+  }
+}

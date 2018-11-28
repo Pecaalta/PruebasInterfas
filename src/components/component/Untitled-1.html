@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bulma.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+
+    <script src="main.js"></script>
+    <style>
+        .navbar,
+        aside {
+            box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
+        }
+
+        .bd-content > .columns,
+        .bd-content > .columns > .column {
+            margin: 0;
+            padding: 0
+        }
+        .hero {
+            border-radius: 5px;
+        }
+        .is-child {
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 34px;
+        }
+    </style>
+</head>
+
+<body class="is-fullheight">
+    <nav class="navbar is-dark">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      
+        <img src="https://bulma.io/images/bulma-logo-white.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+      
+    </a>
+    <div class="navbar-burger burger" data-target="navMenuColordark-example">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navMenuColordark-example" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="https://bulma.io/">
+        Home
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
+          Docs
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
+            Overview
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
+            Modifiers
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
+            Columns
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
+            Layout
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
+            Form
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
+            Elements
+          </a>
+          <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+            Components
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+              <span class="icon">
+                <svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg><!-- <i class="fab fa-twitter"></i> -->
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.7.2/bulma-0.7.2.zip">
+              <span class="icon">
+                <svg class="svg-inline--fa fa-download fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="download" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg><!-- <i class="fas fa-download"></i> -->
+              </span>
+              <span>Download</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+    <div class="bd-lead">
+        <div class="bd-content">
+            <div class="columns">
+
+                <aside class="menu column is-one-quarter sidebar" style="    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 34px;">
+                    <p class="menu-label">
+                        General
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Dashboard</a></li>
+                        <li><a>Customers</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Administration
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Team Settings</a></li>
+                        <li>
+                            <a class="is-active">Manage Your Team</a>
+                            <ul>
+                                <li><a>Members</a></li>
+                                <li><a>Plugins</a></li>
+                                <li><a>Add a member</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Invitations</a></li>
+                        <li><a>Cloud Storage Environment Settings</a></li>
+                        <li><a>Authentication</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Transactions
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Payments</a></li>
+                        <li><a>Transfers</a></li>
+                        <li><a>Balance</a></li>
+                    </ul>
+                </aside>
+
+                <main class="column is-9">
+                    <section class="hero is-primary">
+                        <div class="hero-body">
+                            <div class="container">
+                                <h1 class="title">
+                                    Primary title
+                                </h1>
+                                <h2 class="subtitle">
+                                    Primary subtitle
+                                </h2>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section ">
+                        <div class="tile is-ancestor">
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">One</p>
+                                    <p class="subtitle">Subtitle</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">Two</p>
+                                    <p class="subtitle">Subtitle</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">Three</p>
+                                    <p class="subtitle">Subtitle</p>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">Four</p>
+                                    <p class="subtitle">Subtitle</p>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="tile is-ancestor">
+                            <div class="tile is-vertical is-9">
+                                <div class="tile">
+                                    <div class="tile is-parent">
+                                        <article class="tile is-child box">
+                                            <p class="title">Five</p>
+                                            <p class="subtitle">Subtitle</p>
+                                            <div class="content">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                                                    semper
+                                                    diam at erat pulvinar, at pulvinar felis blandit. Vestibulum
+                                                    volutpat
+                                                    tellus diam, consequat gravida libero rhoncus ut. Morbi maximus,
+                                                    leo
+                                                    sit amet vehicula eleifend, nunc dui porta orci, quis semper odio
+                                                    felis
+                                                    ut quam.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="tile is-8 is-vertical">
+                                        <div class="tile">
+                                            <div class="tile is-parent">
+                                                <article class="tile is-child box">
+                                                    <p class="title">Six</p>
+                                                    <p class="subtitle">Subtitle</p>
+                                                </article>
+                                            </div>
+                                            <div class="tile is-parent">
+                                                <article class="tile is-child box">
+                                                    <p class="title">Seven</p>
+                                                    <p class="subtitle">Subtitle</p>
+                                                </article>
+                                            </div>
+                                        </div>
+                                        <div class="tile is-parent">
+                                            <article class="tile is-child box">
+                                                <p class="title">Eight</p>
+                                                <p class="subtitle">Subtitle</p>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="tile is-8 is-parent">
+                                        <article class="tile is-child box">
+                                            <p class="title">Nine</p>
+                                            <p class="subtitle">Subtitle</p>
+                                            <div class="content">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                                                    ornare
+                                                    magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
+                                                    massa
+                                                    sem. Etiam finibus odio quis feugiat facilisis.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <article class="tile is-child box">
+                                            <p class="title">Ten</p>
+                                            <p class="subtitle">Subtitle</p>
+                                            <div class="content">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                                                    ornare
+                                                    magna eros, eu pellentesque tortor vestibulum ut. Maecenas non
+                                                    massa
+                                                    sem. Etiam finibus odio quis feugiat facilisis.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <div class="content">
+                                        <p class="title">Eleven</p>
+                                        <p class="subtitle">Subtitle</p>
+                                        <div class="content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+                                                diam
+                                                at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus
+                                                diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet
+                                                vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+                                            <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat,
+                                                vitae congue lectus dolor consequat libero. Donec leo ligula, maximus
+                                                et
+                                                pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta.
+                                                Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="tile is-ancestor">
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">Twelve</p>
+                                    <p class="subtitle">Subtitle</p>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna
+                                            eros, eu pellentesque tortor vestibulum ut.</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="tile is-parent is-6">
+                                <article class="tile is-child box">
+                                    <p class="title">Thirteen</p>
+                                    <p class="subtitle">Subtitle</p>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna
+                                            eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam
+                                            finibus odio quis feugiat facilisis.</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">
+                                    <p class="title">Fourteen</p>
+                                    <p class="subtitle">Subtitle</p>
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna
+                                            eros, eu pellentesque tortor vestibulum ut.</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section ">
+                        <nav class="breadcrumb" aria-label="breadcrumbs">
+                            <ul>
+                                <li><a href="#">Bulma</a></li>
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Components</a></li>
+                                <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+                            </ul>
+                        </nav>
+                        <nav class="level">
+                            <!-- Left side -->
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <p class="subtitle is-5">
+                                        <strong>123</strong> posts
+                                    </p>
+                                </div>
+                                <div class="level-item">
+                                    <div class="field has-addons">
+                                        <p class="control">
+                                            <input class="input" type="text" placeholder="Find a post">
+                                        </p>
+                                        <p class="control">
+                                            <button class="button">
+                                                Search
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <table class="table customize is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th><abbr title="Position">Pos</abbr></th>
+                                    <th>Team</th>
+                                    <th><abbr title="Played">Pld</abbr></th>
+                                    <th><abbr title="Won">W</abbr></th>
+                                    <th><abbr title="Drawn">D</abbr></th>
+                                    <th><abbr title="Lost">L</abbr></th>
+                                    <th><abbr title="Goals for">GF</abbr></th>
+                                    <th><abbr title="Goals against">GA</abbr></th>
+                                    <th><abbr title="Goal difference">GD</abbr></th>
+                                    <th><abbr title="Points">Pts</abbr></th>
+                                    <th>Qualification or relegation</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th><abbr title="Position">Pos</abbr></th>
+                                    <th>Team</th>
+                                    <th><abbr title="Played">Pld</abbr></th>
+                                    <th><abbr title="Won">W</abbr></th>
+                                    <th><abbr title="Drawn">D</abbr></th>
+                                    <th><abbr title="Lost">L</abbr></th>
+                                    <th><abbr title="Goals for">GF</abbr></th>
+                                    <th><abbr title="Goals against">GA</abbr></th>
+                                    <th><abbr title="Goal difference">GD</abbr></th>
+                                    <th><abbr title="Points">Pts</abbr></th>
+                                    <th>Qualification or relegation</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester
+                                            City</a> <strong>(C)</strong>
+                                    </td>
+                                    <td>38</td>
+                                    <td>23</td>
+                                    <td>12</td>
+                                    <td>3</td>
+                                    <td>68</td>
+                                    <td>36</td>
+                                    <td>+32</td>
+                                    <td>81</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
+                                            title="2016–17 UEFA Champions League">Champions League group stage</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                            <a class="pagination-previous">Previous</a>
+                            <a class="pagination-next">Next page</a>
+                            <ul class="pagination-list">
+                                <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                                <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+                                <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section class="section ">
+
+                        <div class="tabs is-centered is-boxed is-medium">
+                            <ul>
+                                <li class="is-active">
+                                    <a>
+                                        <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                                        <span>Pictures</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span>
+                                        <span>Music</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span>
+                                        <span>Videos</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+                                        <span>Documents</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <section class="hero is-dark">
+                            <div class="hero-body">
+                                <div class="container">
+                                    <h1 class="title">
+                                        Primary title
+                                    </h1>
+                                    <h2 class="subtitle">
+                                        Primary subtitle
+                                    </h2>
+                                </div>
+                            </div>
+                        </section>
+                        <br>
+
+                        <div class="columns">
+                            <div class="column is-4">
+                                <div class="card ">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="#" class="card-footer-item">Save</a>
+                                        <a href="#" class="card-footer-item">Edit</a>
+                                        <a href="#" class="card-footer-item">Delete</a>
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="card ">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="#" class="card-footer-item">Save</a>
+                                        <a href="#" class="card-footer-item">Edit</a>
+                                        <a href="#" class="card-footer-item">Delete</a>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div class="card ">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="#" class="card-footer-item">Save</a>
+                                        <a href="#" class="card-footer-item">Edit</a>
+                                        <a href="#" class="card-footer-item">Delete</a>
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="card ">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="#" class="card-footer-item">Save</a>
+                                        <a href="#" class="card-footer-item">Edit</a>
+                                        <a href="#" class="card-footer-item">Delete</a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+                    <section class="section ">
+                        <nav class="level">
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Tweets</p>
+                                    <p class="title">3,456</p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Following</p>
+                                    <p class="title">123</p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Followers</p>
+                                    <p class="title">456K</p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Likes</p>
+                                    <p class="title">789</p>
+                                </div>
+                            </div>
+                        </nav>
+                    </section>
+                </main>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function switchToAll() {
+      removeActive();
+      hideAll();
+      $("#all-tab").addClass("is-active");
+      $("#all-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToAdaptiveDesign() {
+      removeActive();
+      hideAll();
+      $("#adaptivedesign-tab").addClass("is-active");
+      $("#adaptivedesign-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToJquery() {
+      removeActive();
+      hideAll();
+      $("#jquery-tab").addClass("is-active");
+      $("#jquery-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToAjax() {
+      removeActive();
+      hideAll();
+      $("#ajax-tab").addClass("is-active");
+      $("#ajax-tab-content").removeClass("is-hidden");
+    }
+
+    function switchToAngularJS() {
+      removeActive();
+      hideAll();
+      $("#angularjs-tab").addClass("is-active");
+      $("#angularjs-tab-content").removeClass("is-hidden");
+    }
+
+    function removeActive() {
+      $("li").each(function() {
+        $(this).removeClass("is-active");
+      });
+    }
+
+    function hideAll(){
+      $("#all-tab-content").addClass("is-hidden");
+      $("#adaptivedesign-tab-content").addClass("is-hidden");
+      $("#jquery-tab-content").addClass("is-hidden");
+      $("#ajax-tab-content").addClass("is-hidden");
+      $("#angularjs-tab-content").addClass("is-hidden");
+    }
+  </script>
+    <script type="text/javascript">
+		var $burgers = document.getElementsByClassName('burger');
+
+		  if ($burgers.length > 0) {
+		  	Array.prototype.forEach.call($burgers, function($el) {
+		      $el.addEventListener('click', function () {
+		        var target = $el.dataset.target;
+		        var $target = document.getElementById(target);
+		        $el.classList.toggle('is-active');
+		        $target.classList.toggle('is-active');
+		      });
+		    });
+		  }
+    </script>
+</html>
